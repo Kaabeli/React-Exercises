@@ -24,7 +24,7 @@ class WeatherComponent extends Component {
 
     render() {
         return <div>
-        <div>Temperature: {this.state.temperature} Fahrenheit</div>
+        <div>Temperature: {this.state.temperature} Celsius</div>
         <div>Weather: {this.state.climate}</div>
         <div><img src={this.state.ikoni} alt="icon"/></div>
         </div>

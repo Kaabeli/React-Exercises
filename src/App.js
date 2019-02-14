@@ -22,6 +22,7 @@ class App extends Component {
             <Link to="/WeatherComponent">Weather Component</Link>
             <Link to="/GitComponent">Git Repo Search</Link>
             <Link to="/TodoList">TodoList</Link>
+            <Link to="/ChuckNorrisComponent">Chuck Norris Jokes</Link>
             </nav>
             <Route exact path="/" />
             <Route path="/HelloComponent" component={HelloComponent} />
@@ -29,6 +30,7 @@ class App extends Component {
             <Route path="/WeatherComponent" component={WeatherComponent} />
             <Route path="/GitComponent" component={GitComponent} />
             <Route path="/TodoList" component={ToDo} />
+            <Route path="/ChuckNorrisComponent" component={ToDo} />
           </div>
         </BrowserRouter>
       </div>

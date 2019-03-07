@@ -1,22 +1,29 @@
-import React from 'react';
-
+import React from 'react'
+import ReactTable from 'react-table'
+import 'react-table/react-table.css'
 
 const ToDoList = (props) => {
 
-    return (
-        <ul>
-            {props.todos.map((todo, index) => {
-                return (<li key={todo.title}>
-                    <input onChange={(event) => props.toggleTodoDone(event, index)} type="checkbox" checked={todo.done} />
-                    <span style={{ textDecoration: todo.done ? 'line-through' : 'inherit' }}>{todo.title}</span>
-                    <button onClick={() => props.removeTodo(index)}>Remove</button>
-                </li>)
-            })}
-        </ul>
+    const columns = [{
+        Header: 'Description',
+        accessor: 'description'
+    }, {
+        Header: 'Date',
+        accessor: 'date',
+        sortable: false
 
+    }, {
+        Header: '',
+        accessor: 'date',
+        sortable: false,
+        filterable: false,
+        Cell: index => <button className="btn btn-danger btn-sm" onClick={() => props.deleteTodo(index)}>Delete</button>
+    }]
+
+    return (
+        <div>
+            <ReactTable defaultPageSize={10} filterable={true} data={props.todos} columns={columns} />
+        </div>
     )
 }
-
 export default ToDoList;
-
-// Tästä olisi voinut tehdä supercomponentin, eli return jälkeinen <ul> -lista olis isketty omaksi komponentiksi, joka olisi kutsuttu tähän komponenttiin :)

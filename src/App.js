@@ -5,7 +5,9 @@ import HelloComponent from './components/HelloComponent';
 import Counter from './components/Counter';
 import WeatherComponent from './components/WeatherComponent';
 import GitComponent from './components/GitComponent';
-import ToDo from './components/ToDoList/ToDo';
+import ChuckNorrisComponent from './components/ChuckNorrisComponent';
+import ToDoMain from './components/ToDoList/ToDoMain';
+
 
 class App extends Component {
   render() {
@@ -21,7 +23,7 @@ class App extends Component {
             <Link to="/Counter">Simple Counter</Link>
             <Link to="/WeatherComponent">Weather Component</Link>
             <Link to="/GitComponent">Git Repo Search</Link>
-            <Link to="/TodoList">TodoList</Link>
+            <Link to="/TodoComponent">TodoComponent</Link>
             <Link to="/ChuckNorrisComponent">Chuck Norris Jokes</Link>
             </nav>
             <Route exact path="/" />
@@ -29,8 +31,8 @@ class App extends Component {
             <Route path="/Counter" component={Counter} />
             <Route path="/WeatherComponent" component={WeatherComponent} />
             <Route path="/GitComponent" component={GitComponent} />
-            <Route path="/TodoList" component={ToDo} />
-            <Route path="/ChuckNorrisComponent" component={ToDo} />
+            <Route path="/TodoComponent" component={ToDoMain} />
+            <Route path="/ChuckNorrisComponent" component={ChuckNorrisComponent} />
           </div>
         </BrowserRouter>
       </div>

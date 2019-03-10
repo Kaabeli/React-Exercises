@@ -17,7 +17,7 @@ const ToDoList = (props) => {
         accessor: 'date',
         sortable: false,
         filterable: false,
-        Cell: index => <button className="btn btn-danger btn-sm" onClick={() => props.deleteTodo(index)}>Delete</button>
+        Cell: index => <button className="btn btn-danger btn-sm" onClick={() => this.props.deleteTodo(index)}>Delete</button>
     }]
 
     return (

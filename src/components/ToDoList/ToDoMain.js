@@ -28,13 +28,12 @@ export default class ToDoMain extends Component {
         })
     }
 
-    deleteTodo(index) {
-        const todos = [...this.state.todos];
-        todos.splice(index, 1);
+    deleteTodo = (index) => {
+        const todo = this.state.todos.filter((todo, i) => i !== index)
         this.setState({
-            todos
+            todos: todo
         })
-    }
+    } 
 
   render() {
     return (
